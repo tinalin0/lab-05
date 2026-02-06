@@ -17,6 +17,7 @@ public class CityDialogFragment extends DialogFragment {
     interface CityDialogListener {
         void updateCity(City city, String title, String year);
         void addCity(City city);
+        void deleteCity(City city); // Added for compatibility
     }
     private CityDialogListener listener;
 
@@ -58,7 +59,8 @@ public class CityDialogFragment extends DialogFragment {
             editMovieYear.setText(city.getProvince());
         }
         else {
-            city = null;}
+            city = null;
+        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
